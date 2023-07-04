@@ -10,10 +10,7 @@ int main()
 
     std::cout << "\n=== VECTOR 1 ===\n";
     std::cout << vector1.size() << std::endl;
-    // std::cout << vector1.at(0) << std::endl;
-    // std::cout << vector1.at(1) << std::endl;
 
-    // My own implementation because it's to early in the course for looping etc.
     for (size_t i=0; i < vector1.size(); i++)
         std::cout << vector1.at(i) << std::endl;
 
@@ -22,8 +19,6 @@ int main()
 
     std::cout << "\n=== VECTOR 2 ===\n";
     std::cout << vector2.size() << std::endl;
-    // std::cout << vector2.at(0) << std::endl;
-    // std::cout << vector2.at(1) << std::endl;
 
     for (size_t i=0; i < vector2.size(); i++)
         std::cout << vector2.at(i) << std::endl;
@@ -34,11 +29,6 @@ int main()
     vector_2d.push_back(vector2);
 
     std::cout << "\n=== VECTOR 2D ===\n";
-    // std::cout << vector_2d.at(0).at(0) << std::endl;
-    // std::cout << vector_2d.at(0).at(1) << std::endl;
-    // std::cout << vector_2d.at(1).at(0) << std::endl;
-    // std::cout << vector_2d.at(1).at(1) << std::endl;
-
     for (size_t i=0; i < vector_2d.size(); i++)
     {
         for (size_t j=0; j < vector_2d.at(i).size(); j++)
@@ -48,11 +38,6 @@ int main()
     vector1.at(0) = 1000;
 
     std::cout << "\n=== VECTOR 2D ===\n";
-    // std::cout << vector_2d.at(0).at(0) << std::endl;
-    // std::cout << vector_2d.at(0).at(1) << std::endl;
-    // std::cout << vector_2d.at(1).at(0) << std::endl;
-    // std::cout << vector_2d.at(1).at(1) << std::endl;
-
     for (size_t i=0; i < vector_2d.size(); i++)
     {
         for (size_t j=0; j < vector_2d.at(i).size(); j++)
@@ -60,10 +45,6 @@ int main()
     }
 
     std::cout << "\n=== VECTOR 1 ===\n";
-    // std::cout << vector1.at(0) << std::endl;
-    // std::cout << vector1.at(1) << std::endl;
-
-
     for (size_t i=0; i < vector1.size(); i++)
         std::cout << vector1.at(i) << std::endl;
 
