@@ -24,10 +24,15 @@ int main()
         switch (option)
         {
         case 'P':
-            std::cout << "[ ";
-            for (int num : numbers)
-                std::cout << num << " ";
-            std::cout << "]\n\n";
+            if (numbers.empty())
+                std::cout << "[] - the list is empty\n\n";
+            else
+            {
+                std::cout << "[ ";
+                for (int num : numbers)
+                    std::cout << num << " ";
+                std::cout << "]\n\n";
+            }
             break;
         case 'A':
             std::cout << "Enter a number to add: "; std::cin >> num;
@@ -36,7 +41,9 @@ int main()
             break;
         case 'M':
             
-            if (numbers.size() > 0)
+            if (numbers.empty())
+                std::cout << "Unable to calculate the mean - no data\n\n";
+            else
             {
                 total = 0;
                 for (int num : numbers)
@@ -45,12 +52,12 @@ int main()
                 mean = static_cast<double>(total / numbers.size());
                 std::cout << "The mean number is: " << mean << "\n\n";
             }
-            else
-                std::cout << "Unable to calculate the mean - no data\n\n";
 
             break;
         case 'S':
-            if (numbers.size() > 0)
+            if (numbers.empty())
+                std::cout << "Unable to determine the smallest number - list is empty\n\n";
+            else
             {
                 smallest_num = numbers.at(0);
                 for (int num : numbers)
@@ -60,12 +67,12 @@ int main()
                 }
                 std::cout << "The smallest number is " << smallest_num << "\n\n";
             }
-            else
-                std::cout << "Unable to determine the smallest number - list is empty\n\n";
 
             break;
         case 'L':
-        if (numbers.size() > 0)
+            if (numbers.empty())
+                std::cout << "Unable to determine the largest number - list is empty\n\n";
+            else
             {
                 largest_num = numbers.at(0);
                 for (int num : numbers)
@@ -75,8 +82,6 @@ int main()
                 }
                 std::cout << "The largest number is " << largest_num << "\n\n";
             }
-            else
-                std::cout << "Unable to determine the largest number - list is empty\n\n";
 
             break;
         case 'Q':
