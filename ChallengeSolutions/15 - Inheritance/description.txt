@@ -24,3 +24,7 @@ The challenge is the following:
     
     The Trust account withdrawal should only allow 3 withdrawals per year and each of these must be less than 20% of the account balance.
     You don't have to keep track of calendar time for this application, just make sure the 4th withdrawal fails
+
+
+# Self Notes:
+    This challenge is pretty general and the helper functions are not polymorphic (next section). So the final result is more based on the assignment than the way I would do it.
