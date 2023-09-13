@@ -8,15 +8,15 @@
 
 int main()
 {
-    CheckAccount frank {"Frank", 5000};
-    std::cout << frank << std::endl;
+    CheckAccount acc1 {"Anakin", 5000};
+    std::cout << acc1 << std::endl;
     
-    Account *trust = new TrustAccount("James");
+    Account *trust = new TrustAccount("Obi-Wan");
     std::cout << *trust << std::endl;
     
-    Account *p1 = new CheckAccount("Larry", 10000);
-    Account *p2 = new SavingsAccount("Moe", 1000);
-    Account *p3 = new TrustAccount("Curly");
+    Account *p1 = new CheckAccount("Padme", 10000);
+    Account *p2 = new SavingsAccount("Yoda", 1000);
+    Account *p3 = new TrustAccount("Qi-Gonn");
     
     std::vector<Account *> accounts {p1,p2,p3};
     
