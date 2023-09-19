@@ -12,7 +12,8 @@ int main()
 {
     std::unique_ptr<Account> acc1;
     std::unique_ptr<Account> acc2;
-    try {
+    try
+    {
         acc2 = std::make_unique<SavingsAccount>("Obi-Wan", -2000.0);
         std::cout << *acc2 << std::endl;
     }
@@ -21,7 +22,8 @@ int main()
         std::cerr << ex.what() << std::endl;
     }
 
-    try {
+    try
+    {
         acc1 = std::make_unique<SavingsAccount>("Anakin", 1000.0);
         std::cout << *acc1 << std::endl;
         acc1->withdraw(500.0);
@@ -37,6 +39,8 @@ int main()
     catch (const InsufficientFundsException &ex) {
         std::cerr << ex.what() << std::endl;
     }
+    
     std::cout << "Program completed successfully" << std::endl;
+
     return 0;
 }
