@@ -40,7 +40,7 @@ int main()
         }
     };
 
-    const int total_width {80}, sub_width {20};
+    const int total_width {68}, sub_width {17};
 
     std::cout << std::setw((total_width + tours.title.length()) / 2) << std::right << tours.title << std::endl << std::endl;
 
@@ -50,7 +50,9 @@ int main()
               << std::setw(sub_width) << std::right << "Price"
               << std::endl;
 
-    std::cout << std::setw(total_width) << std::setfill('-') << "" << std::endl;
+    std::cout << std::setw(total_width) 
+              << std::setfill('-') 
+              << "" << std::endl;
 
     std::cout << std::setfill(' ')
               << std::setprecision(2)
