@@ -10,8 +10,7 @@ bool find_word(const std::string& word, const std::string& target)
 
 int main()
 {
-    std::ifstream in_file;
-    in_file.open("romeoandjuliet.txt");
+    std::ifstream in_file {"romeoandjuliet.txt"};
 
     if (!in_file)
     {
