@@ -1,58 +1,62 @@
-#include <algorithm>
+#include <cctype>
+#include <deque>
+#include <iomanip>
 #include <iostream>
 #include <string>
+#include <vector>
 
-void process_string(std::string& str);
 bool is_palindrome(const std::string& str);
 
 int main()
 {
-    std::string test01 {"A Santa at NASA"}, test02 {"A Toyota's a toyota"}, test03 {"A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!"}, test04 {"This is IT! Fail!"};
-    process_string(test01);
-    process_string(test02);
-    process_string(test03);
-    process_string(test04);
+    std::vector<std::string> samples {
+        "a", "aa", "aba", "abba", "abbcbba", "ab", "abc", "radar", "bob", "ana",
+        "avid diva", "Amore, Roma", "A Toyota's a toyota", "A Santa at NASA", "C++",
+        "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!", "This is a palindrome", "palindrome" 
+    };
 
-    if (is_palindrome(test01))
-        std::cout << test01 << " is a palindrome" << std::endl;
-    else
-        std::cout << test01 << " is not a palindrome" << std::endl;
+    // Set a format width based on the longest sample word
+    size_t width {0};
+    for (const std::string str : samples)
+    {
+        if (str.length() > width)
+            width = str.length() + 2;
+    }
 
-    if (is_palindrome(test02))
-        std::cout << test02 << " is a palindrome" << std::endl;
-    else
-        std::cout << test02 << " is not a palindrome" << std::endl;
-    if (is_palindrome(test03))
-        std::cout << test03 << " is a palindrome" << std::endl;
-    else
-        std::cout << test03 << " is not a palindrome" << std::endl;
+    std::cout << std::boolalpha;
+    std::cout << std::setw(width) << std::left
+              << "String" << "Result" 
+              << std::endl;
 
-    if (is_palindrome(test04))
-        std::cout << test04 << " is a palindrome" << std::endl;
-    else
-        std::cout << test04 << " is not a palindrome" << std::endl;
+    for(const std::string& str : samples)
+    {
+            std::cout << std::setw(width) << std::left 
+                  << str << is_palindrome(str) 
+                  << std::endl;
+    }
+
+    std::cout << std::endl;
 
     return 0;
 }
 
-void process_string(std::string& str)
+bool is_palindrome(const std::string& str)
 {
-    std::string result {};
+    std::deque<char> temp;
+
     for (char c : str)
     {
         if (std::isalpha(c))
-            result += std::toupper(c);
+            temp.push_back(std::toupper(c));
     }
-    str = result;
-}
-bool is_palindrome(const std::string& str)
-{
-    size_t reverse_counter {};
-    for (size_t i = 0; i < str.length(); i++)
+
+    while (temp.size() > 1)
     {
-        reverse_counter = (str.length() - 1) - i;
-        if (str.at(i) != str.at(reverse_counter))
+        if (temp.front() != temp.back())
             return false;
+
+        temp.pop_front();
+        temp.pop_back();
     }
     return true;
 }
