@@ -17,7 +17,7 @@ int main()
 
     // Set a format width based on the longest sample word
     size_t width {0};
-    for (const std::string str : samples)
+    for (const std::string &str : samples)
     {
         if (str.length() > width)
             width = str.length() + 2;
